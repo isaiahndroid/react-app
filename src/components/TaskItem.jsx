@@ -1,10 +1,14 @@
-function TaskItem ({ task, onDelete, index }) {
-    return (
+function TaskItem({ task, index, onDelete, onEdit }) {
+  return (
     <li>
-        {task}
+      {task}
+
+      <div>
+        <button onClick={() => onEdit(index, task)}>Edit</button>
         <button onClick={() => onDelete(index)}>Delete</button>
-        </li>
-        );
+      </div>
+    </li>
+  );
 }
 
 export default TaskItem;
